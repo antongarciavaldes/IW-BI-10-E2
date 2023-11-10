@@ -15,11 +15,11 @@ body {
 }
 
 h2 {
-    color: #FFD700; /* Amarillo dorado */
+    color: #FFD700;
 }
 
 h3 {
-    color: #007BFF; /* Azul */
+    color: #007BFF;
 }
 
 ol {
@@ -32,7 +32,7 @@ li {
 }
 
 a {
-    color: #007BFF; /* Azul */
+    color: #007BFF;
     text-decoration: none;
 }
 
