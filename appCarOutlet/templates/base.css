@@ -1,0 +1,20 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+#content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #FFD700; /* Amarillo dorado */
+    text-align: center;
+}
