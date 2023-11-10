@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalles del coche {% endblock %}
+
+{% block contenido %}
+
+<h2>Datos del coche</h2>
+
+{% if coche %}
+<ul>
+    <li>
+        {{ coche.nombre}}
+    </li>
+    <li>
+        {{ coche.modelo}}
+    </li>
+    <li>
+        {{ coche.precio}}
+    </li>
+    <li>
+        <a href="/appCarOutlet/marcas/{{ coche.marca.id }}">{{ coche.marca}}</a>
+    </li>
+</ul>
+	<h3>Lista de categorias</h3>
+	{% if categorias %}
+		<ol>
+		{% for h in categorias %}
+			<li><a href="/appCarOutlet/categorias/{{ h.id }}">{{ h.nombre}}</a></li>
+		{% endfor %}
+		</ol>
+	{% else %}
+		<p>No tiene categorias asociadas.</p>
+	{% endif %}
+{% else %}
+    <p>No existe este coche.</p>
+{% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+   

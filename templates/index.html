@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de departamentos{% endblock %}
+
+{% block contenido %}
+<h2>Listado de marcas</h2>
+{% if lista_marcas %}
+    <ul>
+    {% for d in lista_marcas %}
+        <li>
+            <a href="/appCarOutlet/marcas/{{ d.id }}">{{ d.nombre}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+<p>No hay marcas creadas.</p>
+{% endif %}
+{% endblock %}
+
+
