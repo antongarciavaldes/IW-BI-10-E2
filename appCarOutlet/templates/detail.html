@@ -9,10 +9,10 @@
 {% if marca %}
     <ul>
         <li>
-            {{ marca.nombre}}
+            {{ marca.nombre }}
         </li>
         <li>
-            <a href="/appCarOutlet/marcas/{{ marca.id }}/coches">Ver coches</a>
+            <a href="{% url 'coches' marca_id=marca.id %}">Ver coches</a>
         </li>
     </ul>
 {% else %}
