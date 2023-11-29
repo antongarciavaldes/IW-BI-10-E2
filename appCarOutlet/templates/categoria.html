@@ -21,7 +21,7 @@
         {% if coches %}
             <ol>
             {% for e in coches %}
-                <li><a href="/appCarOutlet/coches/{{ e.id }}">{{ e.nombre }}</a></li>
+                <li><a href="{% url 'coche' coche_id=coche.id %}">{{ e.nombre }}</a></li>
             {% endfor %}
             </ol>
         {% else %}
