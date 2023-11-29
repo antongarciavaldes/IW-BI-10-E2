@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 
-{% block titulo %} Coches de la marca {% endblock %}
+{% block titulo %} Coches de la marca {{ marca.nombre }} {% endblock %}
 
 {% block contenido %}
 <link rel="stylesheet" href="coches.css">
 <h2>Lista de coches</h2>
 <h3>{{ marca.nombre }}</h3>
+
 {% if coches %}
-	<ul>
-	{% for e in coches %}
-		<li>
-		    <a href="/appCarOutlet/coches/{{ e.id }}">{{ e.nombre}}</a>
-		</li>
-	{% endfor %}
-	</ul>
+    <ul>
+    {% for coche in coches %}
+        <li>
+            <a href="{% url 'detalle_coche' coche.id %}">{{ coche.nombre }}</a>
+        </li>
+    {% endfor %}
+    </ul>
 {% else %}
-<p>No hay coches creados.</p>
+    <p>No hay coches creados.</p>
 {% endif %}
 {% endblock %}
