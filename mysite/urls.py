@@ -18,12 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-<<<<<<< Updated upstream
  path('', include('appCarOutlet.urls')),
  path('admin/', admin.site.urls),
-=======
-    path('', include('appCarOutlet.urls')),  # Redirige a appCarOutlet
-    path('admin/', admin.site.urls),
->>>>>>> Stashed changes
 ]
 """"""
