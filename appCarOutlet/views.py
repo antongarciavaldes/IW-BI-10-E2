@@ -9,7 +9,7 @@ from .models import Marca, Categoria, Coche
 def index_marcas(request):
 	marcas = get_list_or_404(Marca.objects.order_by('nombre'))
 	context = {'lista_marcas': marcas }
-	return render(request, 'appCarOutlet/index.html', context)
+	return render(request, 'index.html', context)
 
 #devuelve los datos de una marca
 def show_marca(request, marca_id):
