@@ -15,28 +15,28 @@ def index_marcas(request):
 def show_marca(request, marca_id):
 	marca = get_object_or_404(Marca, pk=marca_id)
 	context = {'marca': marca }
-	return render(request, 'appCarOutlet/detail.html', context)
+	return render(request, 'detail.html', context)
 
 #devuelve los coches de una marca
 def index_coches(request, marca_id):
 	marca = get_object_or_404(Marca, pk=marca_id)
 	coches =  marca.empleado_set.all()
 	context = {'marca': marca, 'coches' : coches }
-	return render(request, 'appCarOutlet/coches.html', context)
+	return render(request, 'coches.html', context)
 
 #devuelve los detalles de un coche
 def show_coche(request, coche_id):
 	coche = get_object_or_404(Coche, pk=coche_id)
 	categorias =  coche.categorias.all()
 	context = { 'coche': coche, 'categorias' : categorias }
-	return render(request, 'appCarOutlet/coche.html', context)
+	return render(request, 'coche.html', context)
 
 # Devuelve los detalles de una habilidad
 def show_categoria(request, categoria_id):
     categoria = get_object_or_404(Categoria, pk=categoria_id)
     coches =  categoria.coche_set.all()
     context = { 'coches': coches, 'categoria' : categoria }
-    return render(request, 'appCarOutlet/categoria.html', context)
+    return render(request, 'categoria.html', context)
 
 
 
