@@ -10,34 +10,34 @@
 {% if coche %}
 <ul>
     <li>
-        {{ coche.nombre}}
+        {{ coche.nombre }}
     </li>
     <li>
-        {{ coche.modelo}}
+        {{ coche.modelo }}
     </li>
     <li>
-        {{ coche.precio}}
+        {{ coche.precio }}
     </li>
     <li>
-        <a href="{% url 'detail' marca_id = coche.marca.id%}">{{ coche.marca}}</a>
+        <a href="{% url 'detail' marca_id=coche.marca.id %}">{{ coche.marca }}</a>
     </li>
 </ul>
-	<h3>Lista de categorias</h3>
-	{% if categorias %}
-		<ol>
-		{% for h in categorias %}
-			<li><a href="{% url 'categoria' categoria_id=categoria_id}">{{ h.nombre}}</a></li>
-		{% endfor %}
-		</ol>
-	{% else %}
-		<p>No tiene categorias asociadas.</p>
-	{% endif %}
+
+<h3>Lista de categorías</h3>
+    {% if categorias %}
+        <ol>
+        {% for categoria in categorias %}
+            <li><a href="{% url 'categoria' categoria_id=categoria.id %}">{{ categoria.nombre }}</a></li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>No tiene categorías asociadas.</p>
+    {% endif %}
 {% else %}
     <p>No existe este coche.</p>
 {% endif %}
 
 {% endblock %}
-
 
 
 
