@@ -1,12 +1,5 @@
-<<<<<<< Updated upstream
-=======
-from django.shortcuts import render
+
 from django.utils.translation import gettext as _
-from django.shortcuts import redirect
->>>>>>> Stashed changes
-
-
-# Create your views here.
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
 from .forms import MarcaForm, CategoriaForm, CocheForm
