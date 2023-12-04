@@ -9,5 +9,8 @@ urlpatterns = [
     path('coches/<int:coche_id>', views.show_coche, name='coche'),
     path('formulario_marca/',views.marca_form_view, name = 'marca_form'),
     path('formulario_categoria/',views.categoria_form_view, name = 'categoria_form'),
-    path('formulario_coche/',views.coche_form_view, name = 'coche_form')
+    path('formulario_coche/',views.coche_form_view, name = 'coche_form'),
+    path('formulario_coche/',views.coche_form_view, name = 'coche_form'),
+    path('set-language/', views.set_language, name='set_language')
+
 ]
