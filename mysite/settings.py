@@ -112,13 +112,12 @@ LANGUAGES = [
 ]
 
 LANGUAGE_CODE = 'es'
-<<<<<<< Updated upstream
+
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'appCarOutlet/locale'),
 ]
-=======
->>>>>>> Stashed changes
+
 
 TIME_ZONE = 'UTC'
 
