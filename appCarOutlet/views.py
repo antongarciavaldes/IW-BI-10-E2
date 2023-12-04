@@ -45,7 +45,7 @@ def marca_form_view(request):
 		form = MarcaForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('success_page')
+			return redirect('index')
 	else:
 		form = MarcaForm()
 	return render(request,'marca_form.html',{'form' : form})
@@ -55,7 +55,7 @@ def categoria_form_view(request):
 		form = CategoriaForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('success_page')
+			return redirect('index')
 	else:
 		form = CategoriaForm()
 	return render(request,'categoria_form.html',{'form' : form})
@@ -66,7 +66,7 @@ def coche_form_view(request):
 		form = CocheForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('success_page')
+			return redirect('index')
 	else:
 		form = CocheForm()
 	return render(request,'coche_form.html',{'form' : form})
