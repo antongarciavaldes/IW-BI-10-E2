@@ -1,8 +1,9 @@
-from django.shortcuts import render
+
 
 # Create your views here.
 from django.shortcuts import get_object_or_404, get_list_or_404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import MarcaForm, CategoriaForm, CocheForm
 from .models import Marca, Categoria, Coche
 
 #devuelve el listado de marcas
@@ -39,6 +40,36 @@ def show_categoria(request, categoria_id):
     return render(request, 'categoria.html', context)
 
 
+def marca_form_view(request):
+	if request.method =='POST':
+		form = MarcaForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('success_page')
+	else:
+		form = MarcaForm()
+	return render(request,'marca_form.html',{'form' : form})
+
+def categoria_form_view(request):
+	if request.method =='POST':
+		form = CategoriaForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('success_page')
+	else:
+		form = CategoriaForm()
+	return render(request,'categoria_form.html',{'form' : form})
+
+
+def coche_form_view(request):
+	if request.method =='POST':
+		form = CocheForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('success_page')
+	else:
+		form = CocheForm()
+	return render(request,'coche_form.html',{'form' : form})
 
 
 
