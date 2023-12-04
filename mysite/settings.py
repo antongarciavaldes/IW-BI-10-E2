@@ -113,6 +113,10 @@ LANGUAGES = [
 
 LANGUAGE_CODE = 'es'
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'appCarOutlet/locale'),
+]
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

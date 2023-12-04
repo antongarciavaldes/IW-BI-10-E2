@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
+=======
+from django.shortcuts import render
+from django.utils.translation import gettext as _
+from django.shortcuts import redirect
+>>>>>>> Stashed changes
 
 
 # Create your views here.
@@ -38,6 +44,17 @@ def show_categoria(request, categoria_id):
     coches =  categoria.coche_set.all()
     context = { 'coches': coches, 'categoria' : categoria }
     return render(request, 'categoria.html', context)
+
+def set_language(request):
+    if 'lang' in request.GET:
+        # Obtén el idioma desde la solicitud GET
+        language = request.GET['lang']
+        
+        # Configura el idioma seleccionado en la sesión
+        request.session['django_language'] = language
+    
+    # Redirige a la página de origen o a una página predeterminada
+    return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
 def marca_form_view(request):

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% block titulo %}Listado de departamentos{% endblock %}
 
 {% block contenido %}
 <link rel="stylesheet" href="index.css">
-<h2>Listado de marcas</h2>
+<h2>{% trans "Listado de marcas" %}</h2>
 {% if lista_marcas %}
     <ul>
     {% for d in lista_marcas %}
