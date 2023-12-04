@@ -1,0 +1,37 @@
+[
+    {
+        "model": "appCarOutlet.categoria",
+        "pk": 1,
+        "fields": {
+            "nombre": "Sedán"
+        }
+    },
+    {
+        "model": "appCarOutlet.categoria",
+        "pk": 2,
+        "fields": {
+            "nombre": "SUV"
+        }
+    },
+    {
+        "model": "appCarOutlet.categoria",
+        "pk": 3,
+        "fields": {
+            "nombre": "Deportivo"
+        }
+    },
+    {
+        "model": "appCarOutlet.categoria",
+        "pk": 4,
+        "fields": {
+            "nombre": "Caravana"
+        }
+    },
+    {
+        "model": "appCarOutlet.categoria",
+        "pk": 5,
+        "fields": {
+            "nombre": "Furgoneta"
+        }
+    }
+]
