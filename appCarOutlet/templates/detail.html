@@ -9,7 +9,7 @@
 {% if marca %}
     <ul>
         <li>
-            {{ marca.nombre }}
+            <a>{{ marca.nombre }}</a>
         </li>
         <li>
             <a href="{% url 'coches' marca_id=marca.id %}">Ver coches</a>
