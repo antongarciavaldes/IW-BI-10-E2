@@ -20,7 +20,7 @@ def show_marca(request, marca_id):
 #devuelve los coches de una marca
 def index_coches(request, marca_id):
 	marca = get_object_or_404(Marca, pk=marca_id)
-	coches =  marca.empleado_set.all()
+	coches =  marca.coche_set.all()
 	context = {'marca': marca, 'coches' : coches }
 	return render(request, 'coches.html', context)
 
