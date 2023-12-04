@@ -8,13 +8,17 @@
 <h3>{{ marca.nombre }}</h3>
 
 {% if coches %}
-	<ul>
-	{% for e in coches %}
-		<li>
-		    <a href="{% url 'coche' coche_id=e.id %}">{{ e.nombre}}</a>
-		</li>
-	{% endfor %}
-	</ul>
+    <ul>
+    {% for coche in coches %}
+        <li>
+            <a href="{% url 'coche' coche_id=coche.id %}">{{ coche.nombre }}</a>
+            <p>Modelo: {{ coche.modelo }}</p>
+            <p>Precio: {{ coche.precio|floatformat:2 }}</p>
+			<p>Marca: {{ coche.marca }}</p>
+            <!-- Agrega más campos según sea necesario -->
+        </li>
+    {% endfor %}
+    </ul>
 {% else %}
     <p>No hay coches creados.</p>
 {% endif %}

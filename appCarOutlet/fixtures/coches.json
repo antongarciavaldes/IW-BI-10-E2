@@ -1,36 +1,6 @@
 [
     {
         "model": "appCarOutlet.coche",
-        "pk": 1,
-        "fields": {
-            "modelo": "Corolla",
-            "precio": 25000.00,
-            "marca": 1,
-            "categorias": [1]
-        }
-    },
-    {
-        "model": "appCarOutlet.coche",
-        "pk": 2,
-        "fields": {
-            "modelo": "Camry",
-            "precio": 35000.00,
-            "marca": 1,
-            "categorias": [1, 2]
-        }
-    },
-    {
-        "model": "appCarOutlet.coche",
-        "pk": 3,
-        "fields": {
-            "modelo": "F-150",
-            "precio": 40000.00,
-            "marca": 2,
-            "categorias": [2]
-        }
-    },
-    {
-        "model": "appCarOutlet.coche",
         "pk": 4,
         "fields": {
             "modelo": "Ferrari F8",
