@@ -28,5 +28,23 @@
             "marca": 2,
             "categorias": [2]
         }
+    },
+    {
+        "model": "appCarOutlet.coche",
+        "pk": 4,
+        "fields": {
+            "modelo": "Ferrari F8",
+            "precio": 300000,
+            "marca": 4
+        }
+    },
+    {
+        "model": "appCarOutlet.coche",
+        "pk": 5,
+        "fields": {
+            "modelo": "Ferrari 488",
+            "precio": 250000,
+            "marca": 4
+        }
     }
 ]
