@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 {% load i18n %}
     <head>
         <link rel="stylesheet" href="base.css">
         <meta charset="UTF-8">
-        <a href="{% url 'set_language' %}?language=en">English</a>
-        <a href="{% url 'set_language' %}?language=es">Español</a>
+        <a href="{% url 'set_language' %}?lang=en">{% trans "English" %}</a>
+        <a href="{% url 'set_language' %}?lang=es">{% trans "Español" %}</a>
         <title>{% block titulo %}{% trans "Gestor de Coches" %}{% endblock %}</title>
     </head>
     <body>

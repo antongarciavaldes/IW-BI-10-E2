@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 12:19+0000\n"
+"POT-Creation-Date: 2023-12-04 21:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: appCarOutlet/templates/base.html:7 appCarOutlet/templates/base.html:11
+#: appCarOutlet/templates/base.html:7 mysite/settings.py:110
+msgid "English"
+msgstr ""
+
+#: appCarOutlet/templates/base.html:8
+msgid "Español"
+msgstr ""
+
+#: appCarOutlet/templates/base.html:9 appCarOutlet/templates/base.html:14
 msgid "Gestor de Coches"
 msgstr ""
 
@@ -28,10 +36,6 @@ msgstr ""
 
 #: mysite/settings.py:109
 msgid "Spanish"
-msgstr ""
-
-#: mysite/settings.py:110
-msgid "English"
 msgstr ""
 
 #: mysite/settings.py:111
