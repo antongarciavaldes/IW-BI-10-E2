@@ -9,7 +9,7 @@
     <ul>
     {% for d in lista_marcas %}
         <li>
-            <a href="{% url 'detail' marca_id=marca.id %}">{{ d.nombre}}</a>
+            <a href="{% url 'detail' marca_id=d.id %}">{{ d.nombre}}</a>
         </li>
     {% endfor %}
     </ul>
