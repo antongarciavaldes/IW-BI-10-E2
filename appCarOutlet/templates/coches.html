@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-
-{% block titulo %} Coches de la marca {{ marca.nombre }} {% endblock %}
+{% load i18n %}
+{% block titulo %} {% trans "Coches de la marca" %} {{ marca.nombre }} {% endblock %}
 
 {% block contenido %}
 <link rel="stylesheet" href="coches.css">
-<h2>Lista de coches</h2>
+<h2>{% trans "Lista de coches" %}</h2>
 <h3>{{ marca.nombre }}</h3>
 
 {% if coches %}
@@ -12,14 +12,14 @@
     {% for coche in coches %}
         <li>
             <a href="{% url 'coche' coche_id=coche.id %}">{{ coche.nombre }}</a>
-            <p>Modelo: {{ coche.modelo }}</p>
-            <p>Precio: {{ coche.precio|floatformat:2 }}</p>
-			<p>Marca: {{ coche.marca }}</p>
-            <!-- Agrega más campos según sea necesario -->
+            <p>{% trans "Modelo:" %} {{ coche.modelo }}</p>
+            <p>{% trans "Precio:" %} {{ coche.precio|floatformat:2 }}</p>
+			<p>{% trans "Marca:" %} {{ coche.marca }}</p>
+           
         </li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No hay coches creados.</p>
+    <p>{% trans "No hay coches creados." %}</p>
 {% endif %}
 {% endblock %}

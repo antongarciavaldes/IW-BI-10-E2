@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 21:18+0000\n"
+"POT-Creation-Date: 2023-12-05 12:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: appCarOutlet/templates/base.html:7 mysite/settings.py:110
+#: appCarOutlet/templates/base.html:7 appCarOutlet/templates/base.html:12
+msgid "Gestor de Coches"
+msgstr "Gestionnaire de voiture."
+
+#: appCarOutlet/templates/coche.html:5
+msgid "Detalles del coche"
+msgstr "Détails de la voiture."
+
+#: appCarOutlet/templates/coche.html:10
+msgid "Datos del coche"
+msgstr "Données de voiture."
+
+#: appCarOutlet/templates/coche.html:36
+msgid "No tiene categorías asociadas."
+msgstr "N'a pas de catégories associées."
+
+#: appCarOutlet/templates/coche.html:39
+msgid "No existe este coche."
+msgstr "Cette voiture n'existe pas."
+
+#: appCarOutlet/templates/coches.html:3
+msgid "Coches de la marca"
+msgstr "Voitures de marque."
+
+#: appCarOutlet/templates/coches.html:7
+msgid "Lista de coches"
+msgstr "Liste de voitures"
+
+#: appCarOutlet/templates/coches.html:15
+msgid "Modelo:"
+msgstr "Modèle:"
+
+#: appCarOutlet/templates/coches.html:16
+msgid "Precio:"
+msgstr "Prix:"
+
+#: appCarOutlet/templates/coches.html:17
+msgid "Marca:"
+msgstr "Marque:"
+
+#: appCarOutlet/templates/coches.html:23
+#, fuzzy
+#| msgid "No hay marcas creadas."
+msgid "No hay coches creados."
+msgstr "Aucune marque créée."
+
+#: appCarOutlet/templates/detail.html:5
+msgid "Detalle de la marca"
+msgstr "Détail de la marque"
+
+#: appCarOutlet/templates/detail.html:9
+msgid "Datos de la marca"
+msgstr "Détails de la marque"
+
+#: appCarOutlet/templates/detail.html:17
+msgid "Ver coches"
+msgstr "Voir les voitures"
+
+#: appCarOutlet/templates/detail.html:21
+msgid "No existe esta marca."
+msgstr "Cette marque n'existe pas."
+
+#: appCarOutlet/templates/index.html:8 mysite/settings.py:110
 msgid "English"
 msgstr ""
 
-#: appCarOutlet/templates/base.html:8
+#: appCarOutlet/templates/index.html:9
 msgid "Español"
 msgstr ""
 
-#: appCarOutlet/templates/base.html:9 appCarOutlet/templates/base.html:14
-msgid "Gestor de Coches"
+#: appCarOutlet/templates/index.html:10
+msgid "Francés"
 msgstr ""
 
-#: appCarOutlet/templates/index.html:8
+#: appCarOutlet/templates/index.html:12
 msgid "Listado de marcas"
-msgstr ""
+msgstr "Liste des marques"
+
+#: appCarOutlet/templates/index.html:22
+msgid "No hay marcas creadas."
+msgstr "Aucune marque créée."
+
+#: appCarOutlet/templates/index.html:24
+msgid "Listado de categorias"
+msgstr "Liste des catégories"
+
+#: appCarOutlet/templates/index.html:34
+msgid "No hay categorias creadas."
+msgstr "Aucune catégorie n'a été créée."
 
 #: mysite/settings.py:109
 msgid "Spanish"

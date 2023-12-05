@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
-{% block titulo %} Detalle de la marca {% endblock %}
+{% load i18n %}
+
+{% block titulo %} {% trans "Detalle de la marca" %} {% endblock %}
 
 {% block contenido %}
-<link rel="stylesheet" href="detail.css">
-<h2>Datos de la marca</h2>
+<link rel="stylesheet" href="base.css">
+<h2>{% trans "Datos de la marca" %}</h2>
 
 {% if marca %}
     <ul>
@@ -12,11 +14,11 @@
             <a>{{ marca.nombre }}</a>
         </li>
         <li>
-            <a href="{% url 'coches' marca_id=marca.id %}">Ver coches</a>
+            <a href="{% url 'coches' marca_id=marca.id %}">{% trans "Ver coches" %}</a>
         </li>
     </ul>
 {% else %}
-    <p>No existe esta marca.</p>
+    <p>{% trans "No existe esta marca." %}</p>
 {% endif %}
 
 {% endblock %}

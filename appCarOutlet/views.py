@@ -11,6 +11,12 @@ def index_marcas(request):
 	context = {'lista_marcas': marcas }
 	return render(request, 'index.html', context)
 
+#devuelve el listado de categorias
+def index_categorias(request):
+	categorias = get_list_or_404(Categoria.objects.order_by('nombre'))
+	context = {'lista_categorias': categorias }
+	return render(request, 'index.html', context)
+
 #devuelve los datos de una marca
 def show_marca(request, marca_id):
 	marca = get_object_or_404(Marca, pk=marca_id)

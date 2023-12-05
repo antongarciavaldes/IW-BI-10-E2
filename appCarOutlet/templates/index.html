@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% block titulo %}Listado de departamentos{% endblock %}
-
+{% block titulo %}Listado de marcas{% endblock %}
 {% block contenido %}
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="base.css">
+<header>
+    <a href="/en/" role="button">{% trans "English" %}</a>
+    <a href="/es/" role="button">{% trans "Español" %}</a>
+    <a href="/fr/" role="button">{% trans "Francés" %}</a>
+</header>
 <h2>{% trans "Listado de marcas" %}</h2>
 {% if lista_marcas %}
     <ul>
@@ -15,7 +19,19 @@
     {% endfor %}
     </ul>
 {% else %}
-<p>No hay marcas creadas.</p>
+<p>{% trans "No hay marcas creadas." %}</p>
+{% endif%}
+<h2>{% trans "Listado de categorias" %}</h2>
+{% if lista_categorias %}
+    <ul>
+    {% for c in lista_categorias %}
+        <li>
+            <a href="{% url 'detail' categoria_id=c.id %}">{{ c.nombre}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+<p>{% trans "No hay categorias creadas." %}</p>
 {% endif %}
 {% endblock %}
 
