@@ -10,13 +10,13 @@
     <title>Agenda</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="C:\Users\Urko\OneDrive - Universidad de Deusto\Documentos\GitHub\IW-BI-10-E2\appCarOutlet\css\bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="C:\Users\Urko\OneDrive - Universidad de Deusto\Documentos\GitHub\IW-BI-10-E2\appCarOutlet\css\freelancer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="C:\Users\Urko\OneDrive - Universidad de Deusto\Documentos\GitHub\IW-BI-10-E2\appCarOutlet\templates\font-awesome\css\font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -231,6 +231,66 @@
     
     <!-- Vue -->
     <script src="js/vue.js"></script>   
+
+    <script>
+        function estiloCargaError(nombreEstilo, evento) {
+            console.error(`Error al cargar la hoja de estilo "${nombreEstilo}":`, evento);
+        }
+    
+        function verificarCargaEstilos() {
+            var bootstrapCSS = document.getElementById('bootstrap-css');
+            var freelancerCSS = document.getElementById('freelancer-css');
+            var fontAwesomeCSS = document.getElementById('font-awesome-css');
+    
+            if (bootstrapCSS) {
+                bootstrapCSS.addEventListener('error', function (event) {
+                    estiloCargaError('bootstrap', event);
+                });
+            }
+    
+            if (freelancerCSS) {
+                freelancerCSS.addEventListener('error', function (event) {
+                    estiloCargaError('freelancer', event);
+                });
+            }
+    
+            if (fontAwesomeCSS) {
+                fontAwesomeCSS.addEventListener('error', function (event) {
+                    estiloCargaError('font-awesome', event);
+                });
+            }
+    
+            if (bootstrapCSS && freelancerCSS && fontAwesomeCSS) {
+                console.log('Las hojas de estilo se han cargado correctamente.');
+            } else {
+                console.error('Error en la carga de hojas de estilo.');
+            }
+        }
+    
+        window.onload = verificarCargaEstilos;
+    </script>
+
+    
+<script>
+    function verificarRutaCSS(ruta) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = ruta;
+        document.head.appendChild(link);
+
+        link.onload = function() {
+            console.log('El archivo CSS se ha cargado correctamente.');
+        };
+
+        link.onerror = function() {
+            console.error('Error al cargar el archivo CSS. Verifica la ruta:', ruta);
+        };
+    }
+
+    // Ejemplo de uso para la hoja de estilo Bootstrap
+    verificarRutaCSS('css/bootstrap.css');
+</script>
+    
 
 </body>
 
