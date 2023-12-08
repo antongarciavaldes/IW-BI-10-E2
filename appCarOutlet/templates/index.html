@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
 {% block titulo %}Listado de marcas{% endblock %}
+
 {% block contenido %}
-<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 <header>
     <a href="/en/" role="button">{% trans "English" %}</a>
     <a href="/es/" role="button">{% trans "Español" %}</a>

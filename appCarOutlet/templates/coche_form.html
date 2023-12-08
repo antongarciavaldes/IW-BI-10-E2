@@ -2,7 +2,7 @@
 <header>
     <h1>{% trans "Añadir un coche" %}</h1>
 </header>
-<form method="post" action = "">
+<form method="post" action = "" class="form-coche">
     {% csrf_token %}
     {{form.as_ul}}
     <button type="submit">{% trans "Guardar" %}</button>

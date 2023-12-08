@@ -43,3 +43,40 @@ li {
 p {
     color: #888;
 }
+
+
+.form-coche {
+    /* Estilos específicos para el formulario */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-coche label {
+    /* Estilos para las etiquetas del formulario */
+    font-weight: bold;
+}
+
+.form-coche input, .form-coche select {
+    /* Estilos para los campos de entrada y selección del formulario */
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.form-coche button {
+    /* Estilos para el botón del formulario */
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-coche button:hover {
+    /* Estilos al pasar el ratón sobre el botón */
+    background-color: #0056b3;
+}
