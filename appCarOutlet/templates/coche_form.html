@@ -1,5 +1,9 @@
+{% load i18n %}
+<header>
+    <h1>{% trans "Añadir un coche" %}</h1>
+</header>
 <form method="post" action = "">
     {% csrf_token %}
     {{form.as_ul}}
-    <button type="submit">Guardar</button>
+    <button type="submit">{% trans "Guardar" %}</button>
 </form>
