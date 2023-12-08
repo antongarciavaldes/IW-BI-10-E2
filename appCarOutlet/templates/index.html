@@ -8,6 +8,15 @@
     <a href="/en/" role="button">{% trans "English" %}</a>
     <a href="/es/" role="button">{% trans "Español" %}</a>
     <a href="/fr/" role="button">{% trans "Francés" %}</a>
+
+        <!-- Enlace al formulario para Marcas -->
+        <a href="{% url 'marca_form' %}" class="header-link">{% trans 'Crear Marca' %}</a>
+
+        <!-- Enlace al formulario para Categorías -->
+        <a href="{% url 'categoria_form' %}" class="header-link">{% trans 'Crear Categoría' %}</a>
+    
+        <!-- Enlace al formulario para Coches -->
+        <a href="{% url 'coche_form' %}" class="header-link">{% trans 'Crear Coche' %}</a>
 </header>
 <h2>{% trans "Listado de marcas" %}</h2>
 {% if lista_marcas %}
