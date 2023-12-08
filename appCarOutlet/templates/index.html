@@ -7,42 +7,42 @@
 {% block contenido %}
 <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 <header>
+    <p>Idiomas:</p>
     <a href="/en/" role="button">{% trans "English" %}</a>
     <a href="/es/" role="button">{% trans "Español" %}</a>
     <a href="/fr/" role="button">{% trans "Francés" %}</a>
-
-    <!-- Enlace al formulario para Marcas -->
-    <a href="{% url 'marca_form' %}" class="header-link">{% trans "Crear Marca" %}</a>
-
-    <!-- Enlace al formulario para Categorías -->
-    <a href="{% url 'categoria_form' %}" class="header-link">{% trans "Crear Categoría" %}</a>
-    
-    <!-- Enlace al formulario para Coches -->
-    <a href="{% url 'coche_form' %}" class="header-link">{% trans "Crear Coche" %}</a>
 </header>
-<h2>{% trans "Listado de marcas" %}</h2>
-{% if lista_marcas %}
-    <ul>
-    {% for d in lista_marcas %}
-        <li>
-            <a href="{% url 'detail' marca_id=d.id %}">{{ d.nombre}}</a>
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-<p>{% trans "No hay marcas creadas." %}</p>
-{% endif%}
-<h2>{% trans "Listado de categorias" %}</h2>
-{% if lista_categorias %}
-    <ul>
-    {% for c in lista_categorias %}
-        <li>
-            <a href="{% url 'detail' categoria_id=c.id %}">{{ c.nombre}}</a>
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-<p>{% trans "No hay categorias creadas." %}</p>
+
+<nav>
+    <a href="{% url 'marca_form' %}" class="header-link">{% trans "Crear Marca" %}-</a>
+    <a href="{% url 'categoria_form' %}" class="header-link">{% trans "Crear Categoría" %}-</a>
+    <a href="{% url 'coche_form' %}" class="header-link">{% trans "Crear Coche" %}</a>
+</nav>
+<body>
+    <h2>{% trans "Listado de marcas" %}</h2>
+    {% if lista_marcas %}
+        <ul>
+        {% for d in lista_marcas %}
+            <li>
+                    <a href="{% url 'detail' marca_id=d.id %}">{{ d.nombre}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>{% trans "No hay marcas creadas." %}</p>
+    {% endif%}
+    <h2>{% trans "Listado de categorias" %}</h2>
+    {% if lista_categorias %}
+        <ul>
+        {% for c in lista_categorias %}
+            <li>
+                <a href="{% url 'detail' categoria_id=c.id %}">{{ c.nombre}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>{% trans "No hay categorias creadas." %}</p>
+</body>
 {% endif %}
 {% endblock %}
 

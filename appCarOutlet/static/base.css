@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family:"Comic Sans MS";
+    background-color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
 }
@@ -10,7 +10,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #cba457;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -79,4 +79,28 @@ p {
 .form-coche button:hover {
     /* Estilos al pasar el ratón sobre el botón */
     background-color: #0056b3;
+}
+
+nav{
+    color:blue;
+    border: 5px solid black;
+    text-align: center; 
+    background-color:burlywood;
+    font-family:"Comic Sans MS";
+
+}
+
+header{
+    color:blue;
+    text-align: left; 
+    background-color:rgb(227, 205, 177);
+    font-family:"Comic Sans MS";
+}
+
+#titulo{
+    color:black;
+    text-align: center; 
+    background-color:rgb(240, 229, 215);
+    font-family:"Comic Sans MS";
+    text-transform: uppercase;
 }

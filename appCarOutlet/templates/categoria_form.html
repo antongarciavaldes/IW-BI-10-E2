@@ -1,3 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% block titulo %}Formulario de marcas{% endblock %}
+
+{% block contenido %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 {% load i18n %}
 <header>
     <h1>{% trans "Añadir una categoria" %}</h1>
@@ -7,3 +15,4 @@
     {{form.as_ul}}
     <button type="submit">{% trans "Guardar" %}</button>
 </form>
+{% endblock %}

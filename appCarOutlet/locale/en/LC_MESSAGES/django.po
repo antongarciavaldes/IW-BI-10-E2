@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 12:23+0000\n"
+"POT-Creation-Date: 2023-12-08 16:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: appCarOutlet/templates/base.html:7 appCarOutlet/templates/base.html:12
+#: appCarOutlet/templates/base.html:8 appCarOutlet/templates/base.html:13
 msgid "Gestor de Coches"
 msgstr "Car Manager"
+
+#: appCarOutlet/templates/categoria_form.html:3
+#, fuzzy
+#| msgid "Listado de categorias"
+msgid "Añadir una categoria"
+msgstr "List of cathegories"
+
+#: appCarOutlet/templates/categoria_form.html:8
+#: appCarOutlet/templates/coche_form.html:8
+#: appCarOutlet/templates/marca_form.html:8
+msgid "Guardar"
+msgstr ""
 
 #: appCarOutlet/templates/coche.html:5
 msgid "Detalles del coche"
@@ -37,6 +49,10 @@ msgstr "There aren't associated cathegories."
 #: appCarOutlet/templates/coche.html:39
 msgid "No existe este coche."
 msgstr "This car doesn't exist."
+
+#: appCarOutlet/templates/coche_form.html:3
+msgid "Añadir un coche"
+msgstr ""
 
 #: appCarOutlet/templates/coches.html:3
 msgid "Coches de la marca"
@@ -80,38 +96,56 @@ msgstr "See cars"
 msgid "No existe esta marca."
 msgstr "This brand doesn't exist."
 
-#: appCarOutlet/templates/index.html:8 mysite/settings.py:110
+#: appCarOutlet/templates/index.html:10 mysite/settings.py:111
 msgid "English"
 msgstr ""
 
-#: appCarOutlet/templates/index.html:9
+#: appCarOutlet/templates/index.html:11
 msgid "Español"
 msgstr ""
 
-#: appCarOutlet/templates/index.html:10
+#: appCarOutlet/templates/index.html:12
 msgid "Francés"
 msgstr ""
 
-#: appCarOutlet/templates/index.html:12
+#: appCarOutlet/templates/index.html:15
+msgid "Crear Marca"
+msgstr "Create Brand"
+
+#: appCarOutlet/templates/index.html:18
+msgid "Crear Categoría"
+msgstr "Create Cathegory"
+
+#: appCarOutlet/templates/index.html:21
+#, fuzzy
+#| msgid "Ver coches"
+msgid "Crear Coche"
+msgstr "See cars"
+
+#: appCarOutlet/templates/index.html:23
 msgid "Listado de marcas"
 msgstr "Brand list"
 
-#: appCarOutlet/templates/index.html:22
+#: appCarOutlet/templates/index.html:33
 msgid "No hay marcas creadas."
 msgstr "There aren't created brands."
 
-#: appCarOutlet/templates/index.html:24
+#: appCarOutlet/templates/index.html:35
 msgid "Listado de categorias"
 msgstr "List of cathegories"
 
-#: appCarOutlet/templates/index.html:34
+#: appCarOutlet/templates/index.html:45
 msgid "No hay categorias creadas."
 msgstr "There aren't any created cathegories."
 
-#: mysite/settings.py:109
+#: appCarOutlet/templates/marca_form.html:3
+msgid "Añadir una marca"
+msgstr "Add brand"
+
+#: mysite/settings.py:110
 msgid "Spanish"
 msgstr ""
 
-#: mysite/settings.py:111
+#: mysite/settings.py:112
 msgid "French"
 msgstr ""
