@@ -14,6 +14,7 @@ urlpatterns = [
     path('formulario_coche/',views.coche_form_view, name = 'coche_form'),
     path('set-language/', views.set_language, name='set_language'),
     path('es/categoria.html', views.index_categorias, name='categoria_html'),
-    path('es/marcas.html', views.index_marcas, name='marcas_html')
+    path('es/marcas.html', views.index_marcas, name='marcas_html'),
+    path('agenda/', views.agenda_view, name='agenda')
 
 ]

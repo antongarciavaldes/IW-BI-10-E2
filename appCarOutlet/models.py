@@ -22,3 +22,11 @@ class Coche(models.Model):
 
     def __str__(self):
         return f"{self.modelo} ({self.precio})"
+    
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=255)
+    email = models.EmailField()
+    telefono = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.nombre

@@ -94,6 +94,9 @@ def coche_form_view(request):
 	return render(request,'coche_form.html',{'form' : form})
 
 
+from .models import Contacto
 
-
+def agenda_view(request):
+    contactos = Contacto.objects.all()
+    return render(request, 'agenda.html', {'contactos': contactos})
 
