@@ -25,20 +25,14 @@
         <div class="card">
             <img id="imgcat" src='/static/img/coches1.jpeg' alt="categorias foto">
             <a href="{% url 'categoria_html' %}" class="header-link">{% trans "Categorias" %}</a>
-            <p>Lista de Categorias</p>
+            <p>{% trans "Lista de Categorias" %}</p>
         </div>
-        <div class="card" onclick="redirect('marcas.html')">
+        <div class="card">
             <img id="imgmar" src='/static/img/coches2.jpeg' alt="marcas foto">
             <a href="{% url 'marcas_html' %}" class="header-link">{% trans "Marcas" %}</a>
-            <p>Lista de Marcas</p>
+            <p>{% trans "Lista de Marcas" %}</p>
         </div>
     </section>
-
-    <script>
-        function redirect(link) {
-            window.location=link;
-        }
-    </script>
     
 
 </body>
