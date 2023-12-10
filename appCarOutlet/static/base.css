@@ -104,3 +104,21 @@ header{
     font-family:"Comic Sans MS";
     text-transform: uppercase;
 }
+
+.container{
+    display:flex;
+    justify-content: center;
+}
+
+.card{
+    background: white;
+    width: 270px;
+    height:440px;
+    margin:10px;
+    border-radius: 15px;
+}
+
+#imgcat,#imgmar{
+    width: 270px;
+    height:230px;
+}

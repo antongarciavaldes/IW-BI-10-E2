@@ -1,4 +1,3 @@
-
 from django.utils.translation import gettext as _
 
 
@@ -8,16 +7,21 @@ from .forms import MarcaForm, CategoriaForm, CocheForm
 from .models import Marca, Categoria, Coche
 
 #devuelve el listado de marcas
-def index_marcas(request):
+def index(request):
 	marcas = get_list_or_404(Marca.objects.order_by('nombre'))
 	context = {'lista_marcas': marcas }
 	return render(request, 'index.html', context)
+
+def index_marcas(request):
+	marcas = get_list_or_404(Marca.objects.order_by('nombre'))
+	context = {'lista_marcas': marcas }
+	return render(request, 'marcas.html', context)
 
 #devuelve el listado de categorias
 def index_categorias(request):
 	categorias = get_list_or_404(Categoria.objects.order_by('nombre'))
 	context = {'lista_categorias': categorias }
-	return render(request, 'index.html', context)
+	return render(request, 'categoria.html', context)
 
 #devuelve los datos de una marca
 def show_marca(request, marca_id):
@@ -88,7 +92,6 @@ def coche_form_view(request):
 	else:
 		form = CocheForm()
 	return render(request,'coche_form.html',{'form' : form})
-
 
 
 

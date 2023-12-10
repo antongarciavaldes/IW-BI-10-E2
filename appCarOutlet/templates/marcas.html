@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% block titulo %}Listado de marcas{% endblock %}
+
+{% block contenido %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+
+<h2>{% trans "Listado de marcas" %}</h2>
+    {% if lista_marcas %}
+        <ul>
+        {% for d in lista_marcas %}
+            <li>
+                    <a href="{% url 'detail' marca_id=d.id %}">{{ d.nombre}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>{% trans "No hay marcas creadas." %}</p>
+    {% endif%}
+{% endblock %}

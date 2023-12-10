@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block titulo %} Detalles de la categoria {% endblock %}</title>
-</head>
-<body>
-
 {% extends "base.html" %}
+{% load static %}
+{% load i18n %}
 
-{% block titulo %} Detalles de la categoria {% endblock %}
+{% block titulo %}Listado de categorías{% endblock %}
 
 {% block contenido %}
-
-    <h2>Datos de la categoria</h2>
-
-    {% if categoria %}
-        <h3>{{ categoria.nombre }}</h3>
-        <h3>Lista de coches</h3>
-        {% if coches %}
-            <ol>
-            {% for e in coches %}
-                <li><a href="{% url 'coche' coche_id=e.id %}">{{ e.nombre }}</a></li>
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <h2>{% trans "Listado de categorías" %}</h2>
+    {% if lista_categorias %}
+        <ul>
+            {% for c in lista_categorias %}
+                <li>
+                    <a href="{% url 'detail' categoria_id=c.id %}">{{ c.nombre}}</a>
+                </li>
             {% endfor %}
-            </ol>
-        {% else %}
-            <p>No tiene coches asociados.</p>
-        {% endif %}
+        </ul>
     {% else %}
-        <p>No existe esta categoria.</p>
+        <p>{% trans "No hay categorías creadas." %}</p>
     {% endif %}
-
 {% endblock %}
-
-</body>
-</html>

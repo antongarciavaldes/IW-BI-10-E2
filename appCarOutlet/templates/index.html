@@ -19,31 +19,28 @@
     <a href="{% url 'coche_form' %}" class="header-link">{% trans "Crear Coche" %}</a>
 </nav>
 <body>
-    <h2>{% trans "Listado de marcas" %}</h2>
-    {% if lista_marcas %}
-        <ul>
-        {% for d in lista_marcas %}
-            <li>
-                    <a href="{% url 'detail' marca_id=d.id %}">{{ d.nombre}}</a>
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-    <p>{% trans "No hay marcas creadas." %}</p>
-    {% endif%}
-    <h2>{% trans "Listado de categorias" %}</h2>
-    {% if lista_categorias %}
-        <ul>
-        {% for c in lista_categorias %}
-            <li>
-                <a href="{% url 'detail' categoria_id=c.id %}">{{ c.nombre}}</a>
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-    <p>{% trans "No hay categorias creadas." %}</p>
+    <section class="container">
+        <div class="card">
+            <img id="imgcat" src='/static/img/coches1.jpeg' alt="categorias foto">
+            <a href="{% url 'categoria_html' %}" class="header-link">{% trans "Categorias" %}</a>
+            <p>Lista de Categorias</p>
+        </div>
+        <div class="card" onclick="redirect('marcas.html')">
+            <img id="imgmar" src='/static/img/coches2.jpeg' alt="marcas foto">
+            <a href="{% url 'marcas_html' %}" class="header-link">{% trans "Marcas" %}</a>
+            <p>Lista de Marcas</p>
+        </div>
+    </section>
+
+    <script>
+        function redirect(link) {
+            window.location=link;
+        }
+    </script>
+    
+
 </body>
-{% endif %}
+
 {% endblock %}
 
 

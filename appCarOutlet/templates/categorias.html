@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block titulo %} {% trans "Coches de la categoria" %} {{ categoria.nombre }} {% endblock %}
+
+{% block contenido %}
+<link rel="stylesheet" href="base.css">
+<h2>{% trans "Lista de coches" %}</h2>
+<h3>{{ categoria.nombre }}</h3>
+
+{% if coches %}
+    <ul>
+    {% for coche in coches %}
+        <li>
+            <a href="{% url 'coche' coche_id=coche.id %}">{{ coche.nombre }}</a>
+            <p>-</p>
+            <p>{% trans "Modelo:" %} {{ coche.modelo }}</p>
+            <p>{% trans "Precio:" %} {{ coche.precio|floatformat:2 }}</p>
+			<p>{% trans "Marca:" %} {{ coche.marca }}</p>
+           
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>{% trans "No hay coches creados." %}</p>
+{% endif %}
+{% endblock %}
