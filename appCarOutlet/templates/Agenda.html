@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% block titulo %}Listado de marcas{% endblock %}
+
+{% block contenido %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 <html lang="es" xmlns:fb="http://ogp.me/ns/fb#" prefix="og: http://ogp.me/ns#">
 
 <head>
@@ -270,6 +278,7 @@
 
 </body>
 
-</html>
 
+{% endblock %}
+</html>
 
