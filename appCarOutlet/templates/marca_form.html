@@ -1,16 +1,21 @@
-{% extends "base.html" %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Crear marca</title>
+    {% extends "base.html" %}
+    {% load static %}
 
-{% load i18n %}
-{% block titulo %}Formulario de marcas{% endblock %}
+    {% block titulo %}Formulario de marcas{% endblock %}
 
-{% block contenido %}
-<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
-{% load i18n %}
+    {% block contenido %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    {% load i18n %}
+</head>    
 <header>
     <h1>{% trans "Añadir una marca" %}</h1>
+    
 </header>
-<form method="post" action = "">
+<form method="post">
     {% csrf_token %}
     {{form.as_ul}}
     <button type="submit">{% trans "Guardar" %}</button>
