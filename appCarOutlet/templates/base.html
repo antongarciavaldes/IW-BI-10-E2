@@ -1,16 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-{% load i18n %}
+
     <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+        {% load static %}
+        {% load i18n %}
         <meta charset="UTF-8">
         <title>{% block titulo %}{% trans "Gestor de Coches" %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     </head>
     <body>
 
         <div id="content">
-            <h1 id="titulo">{% trans "Gestor de Coches" %}</h1>
+            <h2 id="titulo">{% trans "Gestor de Coches" %}</h2>
             {% block contenido %}{% endblock %}
         </div>
     </body>
