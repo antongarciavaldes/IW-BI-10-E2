@@ -3,7 +3,8 @@
 {% block titulo %} {% trans "Coches de la marca" %} {{ marca.nombre }} {% endblock %}
 
 {% block contenido %}
-<link rel="stylesheet" href="coches.css">
+
+
 <h2>{% trans "Lista de coches" %}</h2>
 <h3>{{ marca.nombre }}</h3>
 
@@ -12,7 +13,6 @@
     {% for coche in coches %}
         <li>
             <a href="{% url 'coche' coche_id=coche.id %}">{{ coche.nombre }}</a>
-            <p>-</p>
             <p>{% trans "Modelo:" %} {{ coche.modelo }}</p>
             <p>{% trans "Precio:" %} {{ coche.precio|floatformat:2 }}</p>
 			<p>{% trans "Marca:" %} {{ coche.marca }}</p>
