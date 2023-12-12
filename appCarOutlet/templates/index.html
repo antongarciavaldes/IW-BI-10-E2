@@ -34,6 +34,25 @@
         </div>
     </section>
     
+    <h2>{% trans "Lista de coches" %}</h2>
+
+    {% if coches_por_marca %}
+        {% for marca_id, coches in coches_por_marca.items %}
+            <h3>{{ coches.0.marca.nombre }}</h3>
+            <ul>
+                {% for coche in coches %}
+                    <li>
+                        <a href="{% url 'coche' coche_id=coche.id %}">{{ coche.nombre }}</a>
+                        <p>{% trans "Modelo:" %} {{ coche.modelo }}</p>
+                        <p>{% trans "Precio:" %} {{ coche.precio|floatformat:2 }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>{% trans "No hay coches creados." %}</p>
+    {% endif %}
+
 
 </body>
 

@@ -6,12 +6,19 @@ from django.shortcuts import render, redirect
 from .forms import MarcaForm, CategoriaForm, CocheForm
 from .models import Marca, Categoria, Coche
 
-#devuelve el listado de marcas
-def index(request):
-	marcas = get_list_or_404(Marca.objects.order_by('nombre'))
-	context = {'lista_marcas': marcas }
-	return render(request, 'index.html', context)
 
+def index(request):
+    cochesFiltrados = Coche.objects.raw('SELECT * FROM appCarOutlet_Coche ORDER BY precio DESC')
+    coches_por_marca = {}
+    for coche in cochesFiltrados:
+        if coche.marca_id not in coches_por_marca:
+            coches_por_marca[coche.marca_id] = []
+        coches_por_marca[coche.marca_id].append(coche)
+
+    context = {'coches_por_marca': coches_por_marca}
+    return render(request, 'index.html', context)
+
+#devuelve el listado de marcas
 def index_marcas(request):
 	marcas = get_list_or_404(Marca.objects.order_by('nombre'))
 	context = {'lista_marcas': marcas }
