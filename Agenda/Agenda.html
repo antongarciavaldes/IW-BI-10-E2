@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de Contactos</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Agenda",
+            "name": "Agenda de Contactos",
+            "contactList": {
+                "@type": "ContactList",
+                "name": "Lista de Contactos",
+                "contacts": [
+                    {
+                        "@type": "Person",
+                        "name": "Fernan",
+                        "email": "feraloonso@am.com",
+                        "telephone": "1234567890",
+                        "twitter": "https://twitter.com/Fernan",
+                        "facebook": "https://www.facebook.com/Fernan"
+                    },
+                    {
+                        "@type": "Person",
+                        "name": "Paquito",
+                        "email": "paquito@opendeusto.opendeusto.es",
+                        "telephone": "456787890",
+                        "twitter": "https://twitter.com/Paquito",
+                        "facebook": "https://www.facebook.com/Paquito"
+                    },
+                    {
+                        "@type": "Person",
+                        "name": "Fermin",
+                        "email": "fermin89@opendeusto.es",
+                        "telephone": "129217890",
+                        "twitter": "https://twitter.com/Fermin",
+                        "facebook": "https://www.facebook.com/Fermin"
+                    }
+                ],
+                "noContacts": "No hay contactos"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <h1>Agenda de Contactos</h1>
+        <div>
+            <h2>Lista de Contactos</h2>
+            <ul>
+                <li v-for="contact in contacts" :key="contact.id">
+                    <span>{{ contact.name }}</span> - 
+                    <span>{{ contact.email }}</span> - 
+                    <span>{{ contact.phone }}</span>
+                    <span v-if="contact.twitter">Twitter: <a :href="contact.twitter">{{ contact.twitter }}</a></span>
+                    <span v-if="contact.facebook">Facebook: <a :href="contact.facebook">{{ contact.facebook }}</a></span>
+                    <button @click="deleteContact(contact)">Eliminar</button>
+                </li>
+            </ul>
+            <p v-if="contacts.length === 0">No hay contactos</p>
+        </div>
+
+        <!-- Formulario para agregar nuevo contacto -->
+        <h2>Nuevo Contacto</h2>
+        <form @submit.prevent="addContact">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" v-model="newContact.name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" v-model="newContact.email" required>
+
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" v-model="newContact.phone" pattern="[0-9]+" title="Ingrese solo números" required>
+
+            <label for="twitter">Twitter:</label>
+            <input type="url" id="twitter" v-model="newContact.twitter" placeholder="https://twitter.com/">
+
+            <label for="facebook">Facebook:</label>
+            <input type="url" id="facebook" v-model="newContact.facebook" placeholder="https://www.facebook.com/">
+
+            <button type="submit">Agregar Contacto</button>
+        </form>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                contacts: [
+                    { id: 1, name: 'Fernan', email: 'feraloonso@am.com', phone: '1234567890', twitter: 'https://twitter.com/Fernan', facebook: 'https://www.facebook.com/Fernan' },
+                    { id: 2, name: 'Paquito', email: 'paquito@opendeusto.opendeusto.es', phone: '456787890', twitter: 'https://twitter.com/Paquito', facebook: 'https://www.facebook.com/Paquito' },
+                    { id: 3, name: 'Fermin', email: 'fermin89@opendeusto.es', phone: '129217890', twitter: 'https://twitter.com/Fermin', facebook: 'https://www.facebook.com/Fermin' }
+                ],
+                newContact: { name: '', email: '', phone: '', twitter: '', facebook: '' }
+            },
+            methods: {
+                addContact: function() {
+                    const newId = Math.max(...this.contacts.map(contact => contact.id), 0) + 1;
+                    this.contacts.push({ id: newId, ...this.newContact });
+                    this.newContact = { name: '', email: '', phone: '', twitter: '', facebook: '' };
+                },
+                deleteContact: function(contact) {
+                    this.contacts = this.contacts.filter(c => c.id !== contact.id);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
